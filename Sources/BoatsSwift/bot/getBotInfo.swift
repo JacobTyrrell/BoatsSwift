@@ -1,7 +1,7 @@
 import Foundation
 
 extension BoatsSwift {
-	public func getBotInfo(botid: String) {
+	public func getBotInfo(botid: String) -> Any {
 		let url = URL(string: "https://discord.boats/api/bot/\(botid)/")
 		var json : Any = {}
 		let task = URLSession.shared.dataTask(with: url!) { data, response, error in

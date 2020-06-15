@@ -1,7 +1,7 @@
 import Foundation
 
 extension BoatsSwift {
-	public func getUser(userid: String) {
+	public func getUser(userid: String) -> Any {
 		let url = URL(string: "https://discord.boats/api/user/\(userid)")
 		var json : Any = {}
 		let task = URLSession.shared.dataTask(with: url!) { data, response, error in

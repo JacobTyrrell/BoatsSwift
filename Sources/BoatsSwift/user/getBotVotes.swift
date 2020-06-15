@@ -1,7 +1,7 @@
 import Foundation
 
 extension BoatsSwift {
-	public func getUserVote(botid: String, userid: String) {
+	public func getUserVote(botid: String, userid: String) -> Any {
 		let url = URL(string: "https://discord.boats/api/bot/\(botid)/voted?id=\(userid)")
 		var json : Any = {}
 		let task = URLSession.shared.dataTask(with: url!) { data, response, error in

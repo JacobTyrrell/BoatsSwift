@@ -2,7 +2,7 @@ import Foundation
 import Sword
 
 extension BoatsSwift {
-	public func postStats(id: Snowflake, serverCount: Int) {
+	public func postStats(id: Snowflake, serverCount: Int) -> Any {
 		let url = URL(string: "https://discord.boats/api/bot/\(id.rawValue)")
 		guard let requestUrl = url else { fatalError() }
 		
