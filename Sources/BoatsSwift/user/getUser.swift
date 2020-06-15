@@ -1,7 +1,7 @@
 import Just
 extension BoatsSwift {
-	public func getUser(userid: UInt64) -> Any {
-		var obj = Just.get("https://discord.boats/api/user/\(userid)")
+	public func getUser(userID: UInt64) -> Any {
+		var obj = Just.get("https://discord.boats/api/user/\(userID)")
 		if obj == nil {
 			return "Error: Bot or user wasn't found"
 		}
