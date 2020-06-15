@@ -3,7 +3,7 @@ extension BoatsSwift {
 	let myJustDefaults = JustSessionDefaults(
 		JSONReadingOptions: .mutableContainers,
 		JSONWritingOptions: .prettyPrinted,
-		headers:  ["Authorization": self.apiKey], request
+		headers:  ["Authorization": self.apiKey]
 	)
 	public func postStats(id: String, serverCount: Int) {
 		let jhttp = JustOf<HTTP>(defaults: myJustDefaults)
