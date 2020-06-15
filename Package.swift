@@ -10,14 +10,14 @@ var dependencies: [Package.Dependency] = [
 var targetDeps: [Target.Dependency] = ["Sword"]
 
 let package = Package(
-	name: "Boats.swift",
+	name: "BoatsSwift",
 	products: [
-		.library(name: "Boats.swift", targets: ["Boats.swift"])
+		.library(name: "BoatsSwift", targets: ["BoatsSwift"])
 	],
 	dependencies: dependencies,
 	targets: [
 		.target(
-			name: "Boats.swift",
+			name: "BoatsSwift",
 			dependencies: targetDeps
 		)
 	]

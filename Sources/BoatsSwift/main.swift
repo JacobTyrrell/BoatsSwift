@@ -1,4 +1,4 @@
 import Foundation
 import Sword
 
-public class BoatsSwift {}
+open public class BoatsSwift {}
