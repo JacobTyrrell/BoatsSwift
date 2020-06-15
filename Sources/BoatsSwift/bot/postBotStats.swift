@@ -2,13 +2,13 @@ import Foundation
 import Sword
 
 extension BoatsSwift {
-	public func postStats(apiKey: String, id: Snowflake, serverCount: Int) {
+	public func postStats(id: Snowflake, serverCount: Int) {
 		let url = URL(string: "https://discord.boats/api/bot/\(id.rawValue)")
 		guard let requestUrl = url else { fatalError() }
 		
 		var request = URLRequest(url: requestUrl)
 		request.httpMethod = "POST"
-		request.setValue(apiKey, forHTTPHeaderField: "Authorization")
+		request.setValue(self.apiKey, forHTTPHeaderField: "Authorization")
 		let postString = "server_count=\(serverCount)";
 		request.httpBody = postString.data(using: String.Encoding.utf8);
 		let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

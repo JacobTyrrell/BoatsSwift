@@ -1,4 +1,9 @@
 import Foundation
 import Sword
 
-open public class BoatsSwift {}
+class BoatsSwift {
+	var apiKey: String
+	init(apiKey: String) {
+		self.apiKey = apiKey
+	}
+}
