@@ -13,9 +13,9 @@ extension BoatsSwift {
 				return
 			}
 			let json = try! JSONSerialization.jsonObject(with: data, options: [])
-			return json
 		}
 		task.resume()
+		return json
 	}
 }
 
