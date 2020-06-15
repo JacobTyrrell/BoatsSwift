@@ -2,7 +2,7 @@ import Foundation
 
 public class BoatsSwift {
 	var apiKey: String
-	init(apiKey: String) {
+	public init(_ apiKey: String) {
 		self.apiKey = apiKey
 	}
 }
