@@ -1,6 +1,6 @@
 import Just
 extension BoatsSwift {
-	public func postStats(id: String, serverCount: Int) {
+	public func postBoatStats(id: String, serverCount: Int) {
 		let myJustDefaults = JustSessionDefaults(
 			JSONReadingOptions: .mutableContainers,
 			JSONWritingOptions: .prettyPrinted,
