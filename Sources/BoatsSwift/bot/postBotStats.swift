@@ -8,6 +8,6 @@ extension BoatsSwift {
 		)
 		let jhttp = JustOf<HTTP>(defaults: myJustDefaults)
 		var r = jhttp.post("https://discord.boats/api/bot/\(id)", json:["server_count": serverCount])
-		return r.content
+		return r.json
 	}
 }
