@@ -3,6 +3,7 @@ import Foundation
 extension BoatsSwift {
 	public func getUser(userid: String) {
 		let url = URL(string: "https://discord.boats/api/user/\(userid)")
+		var json : Any = {}
 		let task = URLSession.shared.dataTask(with: url!) { data, response, error in
 			guard error == nil else {
 				print("[Boats.swift]|[ERROR]|[getUser] Stacktrace: \(error!)")
