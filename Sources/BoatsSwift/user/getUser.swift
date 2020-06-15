@@ -2,6 +2,6 @@ import Just
 extension BoatsSwift {
 	public func grabBoatUser(userid: String) -> Any {
 		var obj = Just.get("https://discord.boats/api/user/\(userid)")
-		return obj
+		return obj.json
 	}
 }
