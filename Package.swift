@@ -4,10 +4,10 @@
 import PackageDescription
 
 var dependencies: [Package.Dependency] = [
-	.package(url: "https://github.com/Azoy/Sword.git", .branch("master"))
+	.package(url: "https://github.com/dduan/Just.git",  from: "0.8.0")
 ]
 
-var targetDeps: [Target.Dependency] = ["Sword"]
+var targetDeps: [Target.Dependency] = ["Just"]
 
 let package = Package(
 	name: "BoatsSwift",

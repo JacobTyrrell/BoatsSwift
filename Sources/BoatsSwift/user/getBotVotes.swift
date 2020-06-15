@@ -1,21 +1,8 @@
-import Foundation
+import Just
 
 extension BoatsSwift {
 	public func getUserVote(botid: String, userid: String) -> Any {
-		let url = URL(string: "https://discord.boats/api/bot/\(botid)/voted?id=\(userid)")
-		var json : Any = {}
-		let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-			guard error == nil else {
-				print("[Boats.swift]|[ERROR]|[getUserVote] Stacktrace: \(error!)")
-				return
-			}
-			guard let data = data else {
-				print("[Boats.swift]|[WARN]|[getUserVote] Stacktrace: There wasn't any data")
-				return
-			}
-			json = try! JSONSerialization.jsonObject(with: data, options: [])
-		}
-		task.resume()
-		return json
+		var obj = Just.get("https://discord.boats/api/bot/\(botid)/voted?id=\(userid)")
+		return obj
 	}
 }

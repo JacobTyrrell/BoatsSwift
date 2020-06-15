@@ -1,27 +1,15 @@
-import Foundation
-import Sword
+import Just
 
 extension BoatsSwift {
-	public func postStats(id: Snowflake, serverCount: Int) {
-		let url = URL(string: "https://discord.boats/api/bot/\(id.rawValue)")
-		guard let requestUrl = url else { fatalError() }
-		
-		var request = URLRequest(url: requestUrl)
-		request.httpMethod = "POST"
-		request.setValue(self.apiKey, forHTTPHeaderField: "Authorization")
-		let postString = "server_count=\(serverCount)";
-		request.httpBody = postString.data(using: String.Encoding.utf8);
-		let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-			if let error = error {
-				print("[Boats.swift]|[ERROR]|[postStats] Stacktrace: \(error)")
-				return
-			}
-			if let data = data, let dataString = String(data: data, encoding: .utf8) {
-				print("[Boats.swift]|[SUCCESS]|[postStats] Posted")
-				
-			}
-		}
-		task.resume()
-		return;
-	}
+	
+	let myJustDefaults = JustSessionDefaults(
+		JSONReadingOptions: .mutableContainers,
+		JSONWritingOptions: .prettyPrinted,
+		headers:  ["Authorization": self.apiKey], request
+	)
+	
+	public func postStats(id: String, serverCount: Int) {
+		let jhttp = JustOf<HTTP>(defaults: myJustDefaults)
+		jhttp.post("https://discord.boats/api/bot/\(id)", json:["server_count": serverCount])
+		return
 }
