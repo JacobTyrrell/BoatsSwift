@@ -1,7 +1,7 @@
 import Just
 extension BoatsSwift {
-	public func getBoatBotInfo(botid: String) -> Any {
+	public func getBotInfo(botid: String) -> Any {
 		var obj = Just.get("https://discord.boats/api/bot/\(botid)")
-		return obj.json
+		return obj.json!
 	}
 }
