@@ -1,5 +1,6 @@
 # BoatsSwift
 
+## Now archived due to discord.boats being discontinued...
 This is the official API library for [Discord Boats](https://discord.boats) in the programming language: Swift. 
 
 ## How do I add this library to my workspace?
